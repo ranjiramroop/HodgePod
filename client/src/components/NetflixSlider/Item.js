@@ -1,10 +1,8 @@
 import React from "react";
 import cx from "classnames";
 import SliderContext from "./context";
-import ShowDetailsButton from "./ShowDetailsButton";
 import Modal from "./../modal/PCmodal";
 import Vote from "../upndownVote/ticker";
-import Mark from "./Mark";
 import "./Item.scss";
 
 const Item = ({ podcast }) => (

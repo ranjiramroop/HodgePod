@@ -1,8 +1,6 @@
 import React from "react";
 import cx from "classnames";
 import SliderContext from "./context";
-import ShowDetailsButton from "./ShowDetailsButton";
-import Mark from "./Mark";
 import Modal from "../modal/Moviemodal";
 import Vote from "../upndownVote/ticker";
 import "./Item.scss";
@@ -19,12 +17,22 @@ const Item2 = ({ movie }) => (
             "item--open": isActive
           })}
         >
-          <div>
+          <div class = "container">
+            <div class = "row">
           <img src={movie.Poster} alt="" />
+              </div>
+            </div>
+            <div class ="row">
+              <div class ="col-sm-4">
           <div class="componentLine"> <Modal /> </div>
+              </div>
+              <div class ="col-sm-4"></div>
+              <div class ="col-sm-4">
           <div class="componentLine"> <Vote /> </div>
+              </div>
+            </div>
           </div>
-        </div>
+       
       );
     }}
   </SliderContext.Consumer>

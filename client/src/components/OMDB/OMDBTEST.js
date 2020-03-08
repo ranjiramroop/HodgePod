@@ -34,8 +34,7 @@ function OMDBTEST() {
         value={searchInput}
         onChange={e => setSearchInput(e.target.value)}
       />{" "}
-      <button onClick={searchQuery}>Hello!</button>
-      <button onClick={() => console.log(data)}>Bye!</button>
+      <button onClick={searchQuery}>Search</button>
       <div>
         {/* {data.results
           ? data.results.map(podcast => <PodcastContainer podcast={podcast} />)
