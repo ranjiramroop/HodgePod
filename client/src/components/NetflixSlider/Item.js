@@ -2,6 +2,8 @@ import React from "react";
 import cx from "classnames";
 import SliderContext from "./context";
 import ShowDetailsButton from "./ShowDetailsButton";
+import Modal from "./../modal/PCmodal";
+import Vote from "../upndownVote/ticker";
 import Mark from "./Mark";
 import "./Item.scss";
 
@@ -17,11 +19,11 @@ const Item = ({ podcast }) => (
             "item--open": isActive
           })}
         >
-          <button>
-            <img src={podcast.thumbnail} alt="" />{" "}
-          </button>
-          <ShowDetailsButton onClick={() => onSelectSlide(podcast)} />
-          {isActive && <Mark />}
+          <div>
+          <img src={podcast.thumbnail} alt="" />
+          <div class="componentLine"> <Modal /> </div>
+          <div class="componentLine"> <Vote /> </div>
+          </div>
         </div>
       );
     }}

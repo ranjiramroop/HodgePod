@@ -3,6 +3,8 @@ import cx from "classnames";
 import SliderContext from "./context";
 import ShowDetailsButton from "./ShowDetailsButton";
 import Mark from "./Mark";
+import Modal from "../modal/Moviemodal";
+import Vote from "../upndownVote/ticker";
 import "./Item.scss";
 
 const Item2 = ({ movie }) => (
@@ -17,9 +19,11 @@ const Item2 = ({ movie }) => (
             "item--open": isActive
           })}
         >
+          <div>
           <img src={movie.Poster} alt="" />
-          <ShowDetailsButton onClick={() => onSelectSlide(movie)} />
-          {isActive && <Mark />}
+          <div class="componentLine"> <Modal /> </div>
+          <div class="componentLine"> <Vote /> </div>
+          </div>
         </div>
       );
     }}
