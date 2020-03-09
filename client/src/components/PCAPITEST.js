@@ -6,9 +6,9 @@ import Card from "./Card";
 import HeaderMain from "./HeaderMain";
 import Slider from "./NetflixSlider";
 
-function PCAPITEST() {
+function PCAPITEST(props) {
   const [data, setData] = useState({ searchResults: [] });
-  const [searchInput, setSearchInput] = useState("Best Podcasts");
+  const [searchInput, setSearchInput] = useState(props.searchTerm);
   useEffect(() => {
     searchQuery(searchInput);
   }, []);

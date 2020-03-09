@@ -6,41 +6,36 @@ import Card from "../Card";
 import HeaderMain from "../HeaderMain";
 import Slider from "../NetflixSlider";
 
-function OMDBTEST() {
+function OMDBTEST(props) {
+  console.log("OMDB TEST", props.searchTerm)
   const [data, setData] = useState({ searchResults: [] });
-  const [searchInput, setSearchInput] = useState("iron man");
+  const [searchInput, setSearchInput] = useState(props.searchTerm);
 
   useEffect(() => {
-    searchQuery(searchInput)
+    searchQuery()
   }, []);
   // variable that is used here is the searchInput, and the setSearchInput is the function that will be used to change the state
   const searchQuery = async () => {
     console.log("hello");
-  
-     omdbapi.search(searchInput).then(result=>{
-       console.log("RESULT",result)
-       setData({searchResults: result.data.Search})
-     })
 
-   
+    omdbapi.search(searchInput).then(result => {
+      console.log("RESULT", result)
+      setData({ searchResults: result.data.Search })
+    })
+
+
   };
 
   return (
     <div>
-    
-     {""}
-      <input
-        type="text"
-        value={searchInput}
-        onChange={e => setSearchInput(e.target.value)}
-      />{" "}
-      <button onClick={searchQuery}>Search</button>
+
+
       <div>
         {/* {data.results
           ? data.results.map(podcast => <PodcastContainer podcast={podcast} />)
           : null} */}
         <div>
-         
+
           <div style={{ display: "flex" }}>
             {/* {data.searchResults ? (
               <h1>there are results</h1>
@@ -49,18 +44,18 @@ function OMDBTEST() {
               ) : (
                 <h6>nothing yet</h6>
             // )} */}
-              {data.searchResults.length > 0 ? <Slider>
-              
-                    { data.searchResults.map((movie,i)=>{
-                        return (
-                          <>
-                          {/* <h1>{movie.Title}</h1> */}
-                          <Slider.Item2 movie={movie} key={i} />
-                          </>
-                        )
-                      })}
-              </Slider> :" " }
-            
+            {data.searchResults.length > 0 ? <Slider>
+
+              {data.searchResults.map((movie, i) => {
+                return (
+                  <>
+                    {/* <h1>{movie.Title}</h1> */}
+                    <Slider.Item2 movie={movie} key={i} />
+                  </>
+                )
+              })}
+            </Slider> : " "}
+
             {/* {data.searchResults ? (
              // <Slider>
                 {data.searchResults.map((movie, i) => (

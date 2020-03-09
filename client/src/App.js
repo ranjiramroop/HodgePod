@@ -3,9 +3,10 @@ import "./App.css";
 import Card from "./components/Card";
 import HeaderMain from "./components/HeaderMain";
 import Slider from "./components/NetflixSlider";
+import SearchContainer from "./components/SearchContainer"
 import PCAPITEST from "./components/PCAPITEST";
 import "../src/components/main.css"
-import OMDBTEST from "./components/OMDB/OMDBTEST";
+
 // import PodcastContainer.js from "./components/PodcastContainer";
 
 const movies = [
@@ -47,34 +48,61 @@ const movies = [
   }
 ];
 
+
 class App extends Component {
+
+  state = {
+    searchTerm: '',
+    searchType: 'movie'
+  };
+
   render() {
+
+    //const [searchInput, setSearchInput] = useState("iron man");
+
+
+    // variable that is used here is the searchInput, and the setSearchInput is the function that will be used to change the state
+    const searchQuery = async (searchTerm) => {
+      console.log("hello");
+      console.log(searchTerm);
+      //this.getSnapshotBeforeUpdate.search = searchTerm;
+
+      // omdbapi.search(searchInput).then(result => {
+      //   console.log("RESULT", result)
+      //   //setData({ searchResults: result.data.Search })
+      // })
+    }
+
     return (
-      <div>
-        {/* <HeaderMain />
-        <PCAPITEST></PCAPITEST>
-        <div style={{ display: "flex" }}>
-          <Slider>
-            {movies.map(movie => (
-              <Slider.Item movie={movie} key={movie.id}>
-                item1
-              </Slider.Item>
-            ))}
-          </Slider>
-        </div>
+      <>
+        <HeaderMain />
+        <SearchContainer />
+      </>
+      //       {
+      //         /* <HeaderMain />
+      //       <PCAPITEST></PCAPITEST>
+      //       <div style={{ display: "flex" }}>
+      //         <Slider>
+      //           {movies.map(movie => (
+      //             <Slider.Item movie={movie} key={movie.id}>
+      //               item1
+      //             </Slider.Item>
+      //           ))}
+      //         </Slider>
+      //       </div>
 
-        <div style={{ display: "flex" }}>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div> */}
+      //       <div style={{ display: "flex" }}>
+      //         <Card />
+      //         <Card />
+      //         <Card />
+      //         <Card />
+      //         <Card />
+      //       </div> 
+      //  <Search searchQuery={searchQuery} searchTerm={this.state.searchTerm} />
+      //       <PCAPITEST />
+      //       <OMDBTEST /> 
+      //     */}
 
-        <PCAPITEST />
-        <OMDBTEST/>
-        
-      </div>
     );
   }
 }
