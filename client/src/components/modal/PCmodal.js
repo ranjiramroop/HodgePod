@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-responsive-modal';
 import PCDetail from '../PCDetail';
+import "./modal.css";
 export default class App extends React.Component {
   state = {
     open: false,
@@ -18,7 +19,7 @@ export default class App extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <button onClick={this.onOpenModal}> More Info</button>
+        <button class ="modalbtn" onClick={this.onOpenModal}> More Info</button>
         <Modal open={open} onClose={this.onCloseModal} center>
           {/* <PCDetail
            Publisher={props.podcasts} 
@@ -26,7 +27,7 @@ export default class App extends React.Component {
           Go to Podcast={props.podcast} 
           /> */}
         </Modal>
-        <button> Save </button>
+        <button class ="modalbtn"> Save </button>
       </div>
     );
   }

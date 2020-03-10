@@ -1,5 +1,5 @@
 .radio-toolbar {
-    margin: 10px;
+    margin: 5px;
   }
   
   .radio-toolbar input[type="radio"] {
@@ -22,12 +22,12 @@
   }
   
   .radio-toolbar input[type="radio"]:focus + label {
-      border: 2px dashed #444;
+      background-color: #bfb;
+      border-color: #4c4;
   }
   
   .radio-toolbar input[type="radio"]:checked + label {
-      background-color: #bfb;
-      border-color: #4c4;
+    border: 2px dashed #444;
   }
 
   .btn-success{
