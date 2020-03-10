@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 
 // This file exports the Input, TextArea, and FormBtn components
 
@@ -31,13 +32,15 @@ export function SearchRadios(props) {
   //should pass through props TODO make scalable
   //TODO style better
   return (
-    <div className="form-group">
-      <input className="form-control" style={{ width: "20px", display: "inline-block" }}
-        type="radio" value="podcasts" onClick={props.handleInputChange} name="searchType" defaultChecked />
-      <label htmlFor="podcasts" style={{ width: "80px", display: "inline-block" }}>Podcasts</label>
-      <input className="form-control" style={{ width: "20px", display: "inline-block" }}
-        type="radio" value="movies" onClick={props.handleInputChange} name="searchType" />
-      <label htmlFor="movies">Movies</label>
-    </div>
+
+
+<div class="radio-toolbar">
+    <input type="radio" id="radioPodcast" name="radioMedia" value="podcasts" onClick={props.handleInputChange} name="searchType" defaultChecked />
+    <label for="radioPodcast">podcasts</label>
+
+    <input type="radio" id="radioMovie" name="radioMedia" value="movies" onClick={props.handleInputChange} name="searchType" />
+    <label for="radioMovie">movies</label>
+</div>
+
   );
 }

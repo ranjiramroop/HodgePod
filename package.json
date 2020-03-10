@@ -34,7 +34,8 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.2",
     "morgan": "^1.9.1",
-    "react-responsive-modal": "^4.0.1"
+    "react-responsive-modal": "^4.0.1",
+    "reactjs-popup": "^1.5.0"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
