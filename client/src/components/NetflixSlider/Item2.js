@@ -24,7 +24,7 @@ const Item2 = ({ movie }) => (
             </div>
             <div class ="row">
               <div class ="col-sm-4">
-          <div class="componentLine"> <Modal /> </div>
+          <div class="componentLine"> <Modal movie={movie} /> </div>
               </div>
               <div class ="col-sm-4"></div>
               <div class ="col-sm-4">

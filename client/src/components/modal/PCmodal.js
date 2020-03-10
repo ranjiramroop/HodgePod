@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-responsive-modal';
- 
+import PCDetail from '../PCDetail';
 export default class App extends React.Component {
   state = {
     open: false,
@@ -18,10 +18,15 @@ export default class App extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <button onClick={this.onOpenModal}>Open modal</button>
+        <button onClick={this.onOpenModal}> More Info</button>
         <Modal open={open} onClose={this.onCloseModal} center>
-          <h2>Simple centered modal</h2>
+          {/* <PCDetail
+           Publisher={props.podcasts} 
+           Genre={props.podcasts} 
+          Go to Podcast={props.podcast} 
+          /> */}
         </Modal>
+        <button> Save </button>
       </div>
     );
   }

@@ -19,7 +19,7 @@ const Item = ({ podcast }) => (
         >
           <div>
           <img src={podcast.thumbnail} alt="" />
-          <div class="componentLine"> <Modal /> </div>
+          <div class="componentLine"> <Modal podcast={podcast} /> </div>
           <div class="componentLine"> <Vote /> </div>
           </div>
         </div>
