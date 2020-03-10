@@ -3,10 +3,13 @@ import Modal from 'react-responsive-modal';
 import PCDetail from '../PCDetail';
 import "./modal.css";
 export default class App extends React.Component {
-  state = {
-    open: false,
-  };
- 
+  constructor(props){
+    super(props)
+    this.state = {
+      open: false,
+    };
+  }
+
   onOpenModal = () => {
     this.setState({ open: true });
   };
@@ -17,15 +20,18 @@ export default class App extends React.Component {
  
   render() {
     const { open } = this.state;
+    const { podcast } = this.props;
+
+    console.log(podcast, "here with podcast")
     return (
       <div>
         <button class ="modalbtn" onClick={this.onOpenModal}> More Info</button>
         <Modal open={open} onClose={this.onCloseModal} center>
-          {/* <PCDetail
-           Publisher={props.podcasts} 
-           Genre={props.podcasts} 
-          Go to Podcast={props.podcast} 
-          /> */}
+          <PCDetail
+           Title={podcast.title_original} 
+           Description={podcast.description_original} 
+           Link={podcast.link} 
+          />
         </Modal>
         <button class ="modalbtn"> Save </button>
       </div>
