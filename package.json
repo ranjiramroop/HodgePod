@@ -34,8 +34,11 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.2",
     "morgan": "^1.9.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "react-responsive-modal": "^4.0.1",
-    "reactjs-popup": "^1.5.0"
+    "reactjs-popup": "^1.5.0",
+    "video-react": "^0.14.1"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",

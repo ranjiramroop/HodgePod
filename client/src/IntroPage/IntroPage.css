@@ -1,19 +1,26 @@
 @import url(//fonts.googleapis.com/css?family=Roboto:700&display=swap);
 
 
-.container{
+/* .container{
     margin-top: 100px;
    
    
+} */
+
+.monsters{
+    
+    position: fixed;
+    margin-top: 70px;
+    margin-left: 40px;
+    
 }
 
-
 .introH2{
-    color:white;
+    color:blue;
     font-family: 'Roboto', sans-serif;
     font-weight: bolder;
     text-align: center;
-    margin-left: 60px;
+   float: left;
     
     
 }
